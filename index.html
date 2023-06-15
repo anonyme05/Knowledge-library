@@ -1,0 +1,101 @@
+
+<?php
+$pho = "pho.jpg";
+$img = "img.jpg";
+$oo = "oo.jpg";
+?>
+
+<!doctype html>
+<html>
+    <head>
+<style>
+   
+   body {
+          background-image: url("pho.jpg");
+        }
+
+footer { 
+    background-image:url("oo.jpg");
+    text-align:center;
+    background-color:lightgray;
+    padding:10px 90px;
+    margin:0px;
+    color:white;
+    }
+
+
+h1{
+      font-size:40px;
+      margin:0;
+      background-image: url("img.jpg");
+      padding:30px 55px;
+      color:brown;
+   }
+
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 7px;
+  padding-right:75px;
+  overflow: hidden;
+  background-color: #dddddd;
+}
+
+
+li {
+  float: left;
+   }
+
+
+a {
+  color:blue;
+  border: 2px solid #e7e7e7;
+  display: block;
+  padding: 9px;
+  background-color: #dddddd;
+     </style>
+
+          <title> Home </title>
+
+     </head>
+
+<body style="background-color:lightyellow;"> 
+
+
+    <h1>  KNOWLEDGE LIBRARY </h1>
+                     
+<ul>
+  <li ><a href="index.html">Home</a></li>
+  <li><a href="All Books.html">All Books</a></li>
+  <li><a href="Available Books.html">Available Books</a></li>
+  <li><a href=" Lent Books.html"> Lent Books </a></li>
+  <li><a href="Most recommended Books.html">Most recommended Books</a></li>
+</ul>
+     
+      <h2 style="text-align:center; color:yellow;font-size:40px;"> <em>  welcome to to our Library !! </em> </h2>
+
+      <h3 style="text-align:center;color:yellow;font-size:40px;"> <em> Our library offers you the opportunity to lent different types of books   </em> </h3> 
+
+  <form action="dbconn.php" method="POST" style="text-align:center;" >
+
+      <input style="width:50%; height:45px;border: 2px solid lightgreen; border-radius: 10px; " type="text"  name="book"   value="" id="book" placeholder="Type the book's title" >
+
+      <input style=" background-color:skyblue; height:50px; border-radius: 10px;" type="submit" value="search">
+  </form>
+
+
+
+     
+     <footer style="padding-left:810px;margin-top:300px;"> adress: Biskra road,Batna, Algeria <br>
+       phone num:0683777139 <br>
+        Fax:0333455768 <br>
+        Email:Knowledge05@gmail.com <br>
+     </footer>
+
+   
+      
+   
+        
+</body>
+</html>

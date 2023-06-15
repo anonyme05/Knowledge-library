@@ -1,0 +1,111 @@
+<?php 
+$con = mysqli_connect("localhost","root","123456789","my_library_database");
+$query = "SELECT * FROM books";
+$result = mysqli_query($con,$query);
+?>
+
+<?php
+$img = "img.jpg";
+$oo = "oo.jpg";
+?>
+
+<!doctype html>
+<html>
+    <head>
+<style>
+   
+footer { 
+    background-image: url("oo.jpg");
+    text-align:center;
+    background-color:lightgray;
+    padding:10px 90px;
+    margin:0px;
+    color:white;
+    }
+
+
+h1{
+      font-size:40px;
+      margin:0;
+      background-image: url("img.jpg");
+      padding:30px 55px;
+      color:brown;
+   }
+
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 7px;
+  padding-right:75px;
+  overflow: hidden;
+  background-color: #dddddd;
+}
+
+
+li {
+  float: left;
+}
+
+
+a {
+  color:blue;
+  border: 2px solid #e7e7e7;
+  display: block;
+  padding: 9px;
+  background-color: #dddddd;
+     </style>
+          <title> Availble Books </title>
+     </head>
+
+
+<body style="background-color:lightyellow;"> 
+
+    <h1>       KNOWLEDGE LIBRARY  </h1>
+      
+<ul>
+  <li><a href="index.html"> Home </a></li>
+  <li><a href="All Books.html">All Books</a></li>
+  <li><a href="Available Books.html">Available Books</a></li>
+  <li><a href=" Lent Books.html"> Lent Books</a></li>
+  <li><a href="Most recommended Books.html">Most recommended Books</a></li>
+</ul>
+
+                     <h2 style=" text-align:center;color: darkblue;"><em> All the availble books </em> </h2>
+
+
+      <table cellspacing="0" cellpadding="25" border="2" style="background-color:skyblue; border-color:skyblue; text-align:center ;margin-left:400px;width:500px" >
+
+     <script type="text/javascript">
+          document.write(`<tr><th style="color:brown;"> Book's id </th> <th style="color:brown;"> Book's title </th> <th style="color:brown;"> Book's author </th></tr>`);
+      </script>
+
+
+         <?php 
+             while($row=mysqli_fetch_assoc($result)){
+                               if( $row ['Book_state']==available){?>  
+                                     <tr>  <td> <?php echo $row ['Book_id']; ?> </td> 
+                                       <td> <?php echo $row ['Book_title']; ?> </td>
+                                         <td> <?php echo $row ['Book_author']; ?> </td>  </tr>
+                                                                          <?php }} ?>
+          
+          </table> 
+
+
+                <p style="padding:5px;font-size:25px;text-align:center;background-color:lightgreen;">
+          <b style="color:red;text-decoration: underline; font-size:35px;">  NOTE: </b><br> 
+             <em>-you can't borrow more than two books <br>
+                 -you can't borrow a book for more than 14 days   <br> 
+                -the disrespect of those rules makes you banned from borrowing books for a week <em></p>
+
+
+
+     <footer style="padding-left:810px;margin-top:300px;"> Adress: Biskra road,Batna, Algérie <br>
+        Phone num:0683777139 <br>
+        Fax:0333455768 <br>
+        Email:Knowledge05@gmail.com <br>
+     </footer>
+   
+        
+</body>
+</html>
